@@ -1,0 +1,20 @@
+<!-- Fixed navbar -->
+<style>
+  nav{
+    font-size: 50px;
+    padding: 4%;
+  }
+</style>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li id="sm" class="visible-sm" style="cursor:pointer" onclick="openNav()">&#9776; Menu</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li> <a *ngIf="!service.isLoggedIn()" routerLink="/login">Login</a></li>
+        <li> <a *ngIf="service.isLoggedIn()" (click)="logout()">Logout</a></li>
+        <li> <a *ngIf="service.isLoggedIn()" routerLink="/cabinet">Cabinet</a></li>
+      </ul>
+    </div>
+</nav>
+<br><br><br><br><br><br><br><br><br>
