@@ -1,17 +1,28 @@
-<div class="col-sm-6 col-md-4" *ngFor="let product of products">
-        <div class="thumbnail">
-          <h3 style="text-align: center">{{product.name}}</h3>
-          <p class="caption">{{product.shortDescription}}</p>
-          <div> <a [routerLink]="['/product', product.product_id]">detail info</a></div>
-          <table width="100%">
-          <tr>
-            <td>Price:</td>
-            <td><h2>{{product.price}}</h2></td>
-            <td align="right"><basket-btn [product]="product"></basket-btn></td>
-          </tr>
-          </table>
-        </div>
-      </div>
+<style>
+    .carts{
+        padding:15px;
+    }
+    text{
+        font-size: -webkit-xxx-large;
+    }
+</style>
+<div class="carts">
+    <div class="col-sm-6 col-md-4" *ngFor="let product of products">
+            <div class="thumbnail">
+              <a [routerLink]="['/product', product.product_id]"><img src="300.png"></a>
+              <h2><a [routerLink]="['/product', product.product_id]">{{product.name}}</a></h2>
+               <div style="padding-left: 40px;">
+                    <table>
+                       <tr>
+                           <td><h1 style="background-color: yellowgreen">{{product.price}} грн</h1></td>
+                           <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+                           <td><basket-btn style="padding-left: 20px" [product]="product"></basket-btn></td>
+                       </tr>
+                   </table>
+               </div>
+            </div>
+    </div>
+</div>
 
 
 

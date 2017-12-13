@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import {CategoriesService} from '../categories.sercice';
 import {ICategoryBase} from '../CategoryBase';
 import {Router} from '@angular/router';
+import {AuthenticationService} from "../../login/authentication.service";
 
 
 @Component({
@@ -17,7 +18,8 @@ import {Router} from '@angular/router';
 
 export class SmartMenuComponent{
   categories: ICategoryBase[];
-  constructor(private router: Router, private categoriesService: CategoriesService) {
+  constructor(private router: Router, private categoriesService: CategoriesService,
+              private authService: AuthenticationService) {
     this.categoriesService.getAll().subscribe(p => this.categories = p);
   }
 }

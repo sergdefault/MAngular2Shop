@@ -15,11 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var categories_sercice_1 = require("../categories.sercice");
 var router_1 = require("@angular/router");
+var authentication_service_1 = require("../../login/authentication.service");
 var SmartMenuComponent = (function () {
-    function SmartMenuComponent(router, categoriesService) {
+    function SmartMenuComponent(router, categoriesService, authService) {
         var _this = this;
         this.router = router;
         this.categoriesService = categoriesService;
+        this.authService = authService;
         this.categoriesService.getAll().subscribe(function (p) { return _this.categories = p; });
     }
     return SmartMenuComponent;
@@ -31,7 +33,8 @@ SmartMenuComponent = __decorate([
         templateUrl: './smart.menu.html',
         styles: ['./smart-menu.css']
     }),
-    __metadata("design:paramtypes", [router_1.Router, categories_sercice_1.CategoriesService])
+    __metadata("design:paramtypes", [router_1.Router, categories_sercice_1.CategoriesService,
+        authentication_service_1.AuthenticationService])
 ], SmartMenuComponent);
 exports.SmartMenuComponent = SmartMenuComponent;
 //# sourceMappingURL=smart.menu.component.js.map

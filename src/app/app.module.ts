@@ -23,10 +23,12 @@ import {OrderAcceptComponent} from "./order/orderAccept/order.accept.component";
 import {CreateNewUserComponent} from "./login/newuser/new.user.component";
 import {SmartMenuComponent} from "./menus/smartPhoneMenu/smart.menu.component";
 import {SmartHeaderComponent} from "./headers/smart/smart.header";
+import {ProductDescriptionComponent} from "./products/description/product.description";
 
 
 const appRoutes: Routes = [
   { path: 'category/:id', component: ProductListComponent },
+  { path: 'product/offer/:id', component: ProductDescriptionComponent },
   { path: 'product/:id',      component: ProductDetailComponent },
   { path: 'login',      component: LoginComponent },
   { path: 'cabinet',      component: UserCabinetComponent, canActivate: [CanActivateAuthGuard]},
@@ -48,7 +50,8 @@ const appRoutes: Routes = [
     CreateNewUserComponent,
     SmartMenuComponent,
     HeaderComponent,
-    SmartHeaderComponent
+    SmartHeaderComponent,
+    ProductDescriptionComponent
   ],
   imports: [
     RouterModule.forRoot(

@@ -1,20 +1,29 @@
 <!-- Fixed navbar -->
 <style>
-  nav{
-    font-size: 50px;
-    padding: 4%;
-  }
+    nav{
+        font-size: 50px;
+        padding: 4%;
+    }
+    .search{
+        margin-right: auto;
+        margin-left: 100px;
+    }
+
 </style>
+<div class="container">
 <nav class="navbar navbar-default navbar-fixed-top">
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li id="sm" class="visible-sm" style="cursor:pointer" onclick="openNav()">&#9776; Menu</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li> <a *ngIf="!service.isLoggedIn()" routerLink="/login">Login</a></li>
-        <li> <a *ngIf="service.isLoggedIn()" (click)="logout()">Logout</a></li>
-        <li> <a *ngIf="service.isLoggedIn()" routerLink="/cabinet">Cabinet</a></li>
-      </ul>
+        <ul class="nav navbar-nav">
+            <li id="sm" class="visible-sm" style="cursor:pointer" onclick="openNav()">&#9776;</li>
+        </ul>
+        <div class="nav navbar-nav search" id="inner">
+            <input type="text" value="искать">
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+           <button routerLink="/order"><img src="basket.png" width="80" height="80"></button>
+        </ul>
     </div>
 </nav>
+</div>
+
 <br><br><br><br><br><br><br><br><br>

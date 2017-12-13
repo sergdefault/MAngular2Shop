@@ -31,9 +31,9 @@ var ProductListComponent = (function () {
 ProductListComponent = __decorate([
     core_1.Component({
         selector: 'app-products',
-        templateUrl: './productList.component.html',
+        templateUrl: './product.description.html',
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute, categories_sercice_1.CategoriesService])
 ], ProductListComponent);
 exports.ProductListComponent = ProductListComponent;
-//# sourceMappingURL=product.component.js.map
+//# sourceMappingURL=product.description.js.mapap

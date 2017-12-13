@@ -1,18 +1,15 @@
 <div *ngIf="product" class="thumbnail">
-    <h3>{{product.name}}</h3>
-    <table>
-      <tr>
-        <td>
-        </td>
-        <td><p class="caption">{{product.shortDescription}}</p></td>
-      </tr>
-    </table>
-    <p>{{product.description}}</p>
-      <table align="right">
-        <tr>
-          <td>Price:</td>
-          <td><h2>{{product.price}}</h2></td>
-          <td align="right"><basket-btn [product]="product"></basket-btn></td>
-        </tr>
-      </table>
+    <a [routerLink]="['/product', product.product_id]"><img src="300.png"></a>
+    <div style="padding-left: 40px;">
+        <table>
+            <tr>
+                <td><h1 style="background-color: yellowgreen">{{product.price}} грн</h1></td>
+                <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+                <td>
+                    <basket-btn style="padding-left: 20px" [product]="product"></basket-btn>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <a [routerLink]="['/product/offer', product.product_id]">Характеристики</a>
 </div>

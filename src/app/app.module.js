@@ -31,8 +31,10 @@ var order_accept_component_1 = require("./order/orderAccept/order.accept.compone
 var new_user_component_1 = require("./login/newuser/new.user.component");
 var smart_menu_component_1 = require("./menus/smartPhoneMenu/smart.menu.component");
 var smart_header_1 = require("./headers/smart/smart.header");
+var product_description_1 = require("./products/description/product.description");
 var appRoutes = [
     { path: 'category/:id', component: product_component_1.ProductListComponent },
+    { path: 'product/offer/:id', component: product_description_1.ProductDescriptionComponent },
     { path: 'product/:id', component: product_detail_component_1.ProductDetailComponent },
     { path: 'login', component: login_component_1.LoginComponent },
     { path: 'cabinet', component: user_cabinet_component_1.UserCabinetComponent, canActivate: [can_activate_authguard_1.CanActivateAuthGuard] },
@@ -59,7 +61,8 @@ AppModule = __decorate([
             new_user_component_1.CreateNewUserComponent,
             smart_menu_component_1.SmartMenuComponent,
             header_component_1.HeaderComponent,
-            smart_header_1.SmartHeaderComponent
+            smart_header_1.SmartHeaderComponent,
+            product_description_1.ProductDescriptionComponent
         ],
         imports: [
             router_1.RouterModule.forRoot(appRoutes, { enableTracing: true } // <-- debugging purposes only

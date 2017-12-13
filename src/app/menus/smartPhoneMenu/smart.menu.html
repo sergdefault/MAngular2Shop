@@ -1,18 +1,21 @@
 <style>
-  .center{
-    text-align: center;
-    font-size: 45px;
+  .links{
+    font-size: -webkit-xxx-large;
   }
 </style>
 <br><br><br><br><br>
 <h1><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a></h1>
-
-<div *ngFor="let category of categories">
-  <div class="list-group center">
-    <a style="color: black" onclick="closeNav()" [routerLink]="['/category', category.id]" >{{category.name}}</a>
+<div class="links">
+  <a *ngIf="!authService.isLoggedIn()" routerLink="/login">Login</a>
+  <a *ngIf="authService.isLoggedIn()" (click)="logout()">Logout</a>
+  <a *ngIf="authService.isLoggedIn()" routerLink="/cabinet">Cabinet</a>
+</div>
+<hr>
+<div class="links" *ngFor="let category of categories">
+  <div>
+    <a onclick="closeNav()" [routerLink]="['/category', category.id]" >{{category.name}}</a>
   </div>
 </div>
-
+<hr>
 <br><br>
-<app-basket></app-basket>
 
