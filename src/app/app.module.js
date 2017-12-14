@@ -17,7 +17,6 @@ var product_detail_component_1 = require("./products/productDetail/product.detai
 var app_component_1 = require("./app.component");
 var categories_component_1 = require("./menus/menu/categories.component");
 var basket_btn_component_1 = require("./basket/btn/basket.btn.component");
-var basket_tcomponent_1 = require("./basket/container/basket.tcomponent");
 var order_service_util_1 = require("./utils/order/order.service.util");
 var login_component_1 = require("./login/login.component");
 var header_component_1 = require("./headers/desctop/header.component");
@@ -26,7 +25,6 @@ var user_cabinet_component_1 = require("./cabinet/user.cabinet.component");
 var can_activate_authguard_1 = require("./login/can-activate.authguard");
 var user_service_1 = require("./cabinet/user.service");
 var order_service_1 = require("./order/order.service");
-var order_list_component_1 = require("./order/orderList/order.list.component");
 var order_accept_component_1 = require("./order/orderAccept/order.accept.component");
 var new_user_component_1 = require("./login/newuser/new.user.component");
 var smart_menu_component_1 = require("./menus/smartPhoneMenu/smart.menu.component");
@@ -54,10 +52,8 @@ AppModule = __decorate([
             categories_component_1.CategoryListComponent,
             product_detail_component_1.ProductDetailComponent,
             basket_btn_component_1.BasketBtn,
-            basket_tcomponent_1.BasketComponent,
             login_component_1.LoginComponent,
             user_cabinet_component_1.UserCabinetComponent,
-            order_list_component_1.OrderListComponent,
             order_accept_component_1.OrderAcceptComponent,
             new_user_component_1.CreateNewUserComponent,
             smart_menu_component_1.SmartMenuComponent,

@@ -22,4 +22,7 @@ export class SmartMenuComponent{
               private authService: AuthenticationService) {
     this.categoriesService.getAll().subscribe(p => this.categories = p);
   }
+  logout(){
+    this.authService.logout();
+  }
 }

@@ -14,14 +14,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var core_1 = require("@angular/core");
 var order_service_util_1 = require("../../utils/order/order.service.util");
+var order_1 = require("../order");
 var OrderAcceptComponent = (function () {
-    function OrderAcceptComponent(ordersUtil) {
-        this.ordersUtil = ordersUtil;
-        this.products = this.ordersUtil.getProducts();
-        this.total = this.ordersUtil.getTotal();
+    function OrderAcceptComponent(service) {
+        this.service = service;
+        this.order = new order_1.Order();
     }
+    OrderAcceptComponent.prototype.ngOnInit = function () {
+        this.order = this.service.getOrder();
+    };
     OrderAcceptComponent.prototype.deleteProduct = function (product) {
-        this.ordersUtil.deleteProduct(product);
+        this.service.deleteItem(product);
+    };
+    OrderAcceptComponent.prototype.save = function () {
+        //this.pr.save(this.p);
+        //todo
     };
     return OrderAcceptComponent;
 }());

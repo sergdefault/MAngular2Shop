@@ -43,6 +43,9 @@ var LoginComponent = (function () {
             _this.error = error;
         });
     };
+    LoginComponent.prototype.logout = function () {
+        this.authenticationService.logout();
+    };
     return LoginComponent;
 }());
 LoginComponent = __decorate([

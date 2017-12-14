@@ -10,33 +10,60 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var order_1 = require("../../order/order");
+var authentication_service_1 = require("../../login/authentication.service");
+var order_item_1 = require("../../order/order.item");
 var OrderServiceUtil = (function () {
-    function OrderServiceUtil() {
-        this.products = [];
+    function OrderServiceUtil(authService) {
+        this.authService = authService;
+        this.order = new order_1.Order();
         this.total = 0;
+        if (authService.isLoggedIn()) {
+            //todo;
+        }
     }
     OrderServiceUtil.prototype.addProduct = function (product) {
-        this.products.push(product);
-        this.total = this.getTotal();
+        var _this = this;
+        if (this.order.items.length == 0) {
+            this.order.items.push(new order_item_1.OrderItem(product, 1));
+        }
+        else {
+            var index_1;
+            this.order.items.forEach(function (i) {
+                if (product.product_id == i.product_id) {
+                    index_1 = _this.order.items.indexOf(i);
+                }
+            });
+            if (index_1 == null) {
+                this.order.items.push(new order_item_1.OrderItem(product, 1));
+            }
+            else {
+                this.order.items[index_1].quantity++;
+            }
+        }
     };
-    OrderServiceUtil.prototype.getProducts = function () {
-        return this.products;
+    OrderServiceUtil.prototype.getOrder = function () {
+        return this.order;
     };
-    OrderServiceUtil.prototype.deleteProduct = function (product) {
-        this.products.splice(this.products.indexOf(product), 1);
-        this.total = this.getTotal();
+    OrderServiceUtil.prototype.deleteItem = function (product) {
+        var _this = this;
+        this.order.items.forEach(function (i) {
+            if (i.product_id == product.product_id) {
+                _this.order.items.splice(_this.order.items.indexOf(i));
+            }
+        });
     };
     OrderServiceUtil.prototype.getTotal = function () {
         var _this = this;
         this.total = 0;
-        this.products.forEach(function (p) { return _this.total += p.price; });
+        this.order.items.forEach(function (i) { return _this.total += i.price * i.quantity; });
         return this.total;
     };
     return OrderServiceUtil;
 }());
 OrderServiceUtil = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [authentication_service_1.AuthenticationService])
 ], OrderServiceUtil);
 exports.OrderServiceUtil = OrderServiceUtil;
 //# sourceMappingURL=order.service.util.js.map

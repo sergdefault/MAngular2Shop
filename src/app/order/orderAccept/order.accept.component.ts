@@ -4,6 +4,7 @@
 import {Component} from "@angular/core";
 import {IProduct} from "../../products/product";
 import {OrderServiceUtil} from "../../utils/order/order.service.util";
+import {Order} from "../order";
 
 
 @Component({
@@ -12,15 +13,22 @@ import {OrderServiceUtil} from "../../utils/order/order.service.util";
 })
 
 export class OrderAcceptComponent {
-  products: IProduct[];
-  total:number;
+  order = new Order();
 
-  constructor(private ordersUtil: OrderServiceUtil){
-      this.products = this.ordersUtil.getProducts();
-      this.total = this.ordersUtil.getTotal();
+  constructor(private service: OrderServiceUtil) {
+  }
+
+  ngOnInit(): void {
+    this.order = this.service.getOrder();
   }
 
   deleteProduct(product: IProduct) {
-    this.ordersUtil.deleteProduct(product);
+    this.service.deleteItem(product);
   }
+
+  save(): void {
+    //this.pr.save(this.p);
+    //todo
+  }
+
 }

@@ -1,13 +1,14 @@
-<div class="container jumbotron">
-  <h2>Items:</h2>
-  <table border="1px" width="70%">
-    <th>№</th>
-    <th>Name</th>
-    <th>Price</th>
-    <tr *ngFor="let p of products ; let i = index">
-      <td>{{i+1}}</td>
-      <td>{{p.name}}</td>
-      <td>{{p.price}}</td>
+<div class="text content jumbotron">
+  <table>
+    <th><h2>№</h2></th>
+    <th><h2>Name</h2></th>
+    <th><h2>Quantity</h2></th>
+    <th><h2>Price</h2></th>
+    <tr *ngFor="let item of order.items ; let i = index">
+      <td><h2>{{i+1}}</h2></td>
+      <td><h2>{{item.name}}</h2></td>
+      <td><h2>{{item.quantity}}</h2></td>
+      <td><h2>{{item.price}}</h2></td>
       <td>
         <button (click)="deleteProduct(p)">delete</button>
       </td>
@@ -15,6 +16,4 @@
   </table>
   <h2>Total : {{total}}</h2>
 </div>
-<div>
-  <new-user></new-user>
-</div>
+

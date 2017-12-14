@@ -36,4 +36,7 @@ login() {
       this.error = error;
     });
 }
+  logout(){
+    this.authenticationService.logout();
+  }
 }

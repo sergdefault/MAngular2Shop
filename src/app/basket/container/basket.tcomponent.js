@@ -10,21 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var product_service_1 = require("../../products/productList/product.service");
 var order_service_util_1 = require("../../utils/order/order.service.util");
+var order_1 = require("../../order/order");
 var BasketComponent = (function () {
-    function BasketComponent(service, pr) {
+    function BasketComponent(service) {
         this.service = service;
-        this.pr = pr;
+        this.order = new order_1.Order();
     }
     BasketComponent.prototype.ngOnInit = function () {
-        this.p = this.service.getProducts();
+        this.order = this.service.getOrder();
     };
     BasketComponent.prototype.deleteProduct = function (product) {
-        this.service.deleteProduct(product);
+        this.service.deleteItem(product);
     };
     BasketComponent.prototype.save = function () {
-        this.pr.save(this.p);
+        //this.pr.save(this.p);
+        //todo
     };
     return BasketComponent;
 }());
@@ -34,7 +35,7 @@ BasketComponent = __decorate([
         templateUrl: './basket.component.html',
         styles: []
     }),
-    __metadata("design:paramtypes", [order_service_util_1.OrderServiceUtil, product_service_1.ProductService])
+    __metadata("design:paramtypes", [order_service_util_1.OrderServiceUtil])
 ], BasketComponent);
 exports.BasketComponent = BasketComponent;
 //# sourceMappingURL=basket.tcomponent.js.map

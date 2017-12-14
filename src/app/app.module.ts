@@ -9,7 +9,6 @@ import {ProductDetailComponent} from './products/productDetail/product.detail.co
 import {AppComponent} from './app.component';
 import {CategoryListComponent} from './menus/menu/categories.component';
 import {BasketBtn} from './basket/btn/basket.btn.component';
-import {BasketComponent} from './basket/container/basket.tcomponent';
 import {OrderServiceUtil} from './utils/order/order.service.util';
 import {LoginComponent} from "./login/login.component";
 import {HeaderComponent} from "./headers/desctop/header.component";
@@ -18,7 +17,6 @@ import {UserCabinetComponent} from "./cabinet/user.cabinet.component";
 import {CanActivateAuthGuard} from "./login/can-activate.authguard";
 import {UserService} from "./cabinet/user.service";
 import {OrderService} from "./order/order.service";
-import {OrderListComponent} from "./order/orderList/order.list.component";
 import {OrderAcceptComponent} from "./order/orderAccept/order.accept.component";
 import {CreateNewUserComponent} from "./login/newuser/new.user.component";
 import {SmartMenuComponent} from "./menus/smartPhoneMenu/smart.menu.component";
@@ -43,10 +41,8 @@ const appRoutes: Routes = [
     CategoryListComponent,
     ProductDetailComponent,
     BasketBtn,
-    BasketComponent,
     LoginComponent,
     UserCabinetComponent,
-    OrderListComponent,
     OrderAcceptComponent,
     CreateNewUserComponent,
     SmartMenuComponent,
