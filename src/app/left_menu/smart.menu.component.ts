@@ -3,10 +3,10 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import {CategoriesService} from '../categories.sercice';
-import {ICategoryBase} from '../CategoryBase';
+import {CategoriesService} from '../category/categories.sercice';
+import {ICategoryBase} from '../category/CategoryBase';
 import {Router} from '@angular/router';
-import {AuthenticationService} from "../../login/authentication.service";
+import {AuthenticationService} from "../login/authentication.service";
 
 
 @Component({

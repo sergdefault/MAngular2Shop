@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var categories_sercice_1 = require("../../menus/categories.sercice");
+var categories_sercice_1 = require("../../category/categories.sercice");
 var ProductListComponent = (function () {
     function ProductListComponent(route, categoriesService) {
         var _this = this;

@@ -1,7 +1,7 @@
 import {IProduct} from '../product';
 import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {CategoriesService} from '../../menus/categories.sercice';
+import {CategoriesService} from '../../category/categories.sercice';
 
 @Component({
   selector: 'app-products',

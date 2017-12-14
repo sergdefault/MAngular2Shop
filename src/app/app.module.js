@@ -15,11 +15,10 @@ var product_service_1 = require("./products/productList/product.service");
 var product_component_1 = require("./products/productList/product.component");
 var product_detail_component_1 = require("./products/productDetail/product.detail.component");
 var app_component_1 = require("./app.component");
-var categories_component_1 = require("./menus/menu/categories.component");
+var categories_component_1 = require("./category/categories.component");
 var basket_btn_component_1 = require("./basket/btn/basket.btn.component");
 var order_service_util_1 = require("./utils/order/order.service.util");
 var login_component_1 = require("./login/login.component");
-var header_component_1 = require("./headers/desctop/header.component");
 var authentication_service_1 = require("./login/authentication.service");
 var user_cabinet_component_1 = require("./cabinet/user.cabinet.component");
 var can_activate_authguard_1 = require("./login/can-activate.authguard");
@@ -27,7 +26,7 @@ var user_service_1 = require("./cabinet/user.service");
 var order_service_1 = require("./order/order.service");
 var order_accept_component_1 = require("./order/orderAccept/order.accept.component");
 var new_user_component_1 = require("./login/newuser/new.user.component");
-var smart_menu_component_1 = require("./menus/smartPhoneMenu/smart.menu.component");
+var smart_menu_component_1 = require("./left_menu/smart.menu.component");
 var smart_header_1 = require("./headers/smart/smart.header");
 var product_description_1 = require("./products/description/product.description");
 var appRoutes = [
@@ -57,7 +56,6 @@ AppModule = __decorate([
             order_accept_component_1.OrderAcceptComponent,
             new_user_component_1.CreateNewUserComponent,
             smart_menu_component_1.SmartMenuComponent,
-            header_component_1.HeaderComponent,
             smart_header_1.SmartHeaderComponent,
             product_description_1.ProductDescriptionComponent,
         ],

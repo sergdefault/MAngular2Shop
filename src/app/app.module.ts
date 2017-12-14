@@ -7,11 +7,10 @@ import { ProductService } from './products/productList/product.service';
 import { ProductListComponent } from './products/productList/product.component';
 import {ProductDetailComponent} from './products/productDetail/product.detail.component';
 import {AppComponent} from './app.component';
-import {CategoryListComponent} from './menus/menu/categories.component';
+import {CategoryListComponent} from './category/categories.component';
 import {BasketBtn} from './basket/btn/basket.btn.component';
 import {OrderServiceUtil} from './utils/order/order.service.util';
 import {LoginComponent} from "./login/login.component";
-import {HeaderComponent} from "./headers/desctop/header.component";
 import {AuthenticationService} from "./login/authentication.service";
 import {UserCabinetComponent} from "./cabinet/user.cabinet.component";
 import {CanActivateAuthGuard} from "./login/can-activate.authguard";
@@ -19,7 +18,7 @@ import {UserService} from "./cabinet/user.service";
 import {OrderService} from "./order/order.service";
 import {OrderAcceptComponent} from "./order/orderAccept/order.accept.component";
 import {CreateNewUserComponent} from "./login/newuser/new.user.component";
-import {SmartMenuComponent} from "./menus/smartPhoneMenu/smart.menu.component";
+import {SmartMenuComponent} from "./left_menu/smart.menu.component";
 import {SmartHeaderComponent} from "./headers/smart/smart.header";
 import {ProductDescriptionComponent} from "./products/description/product.description";
 
@@ -46,7 +45,6 @@ const appRoutes: Routes = [
     OrderAcceptComponent,
     CreateNewUserComponent,
     SmartMenuComponent,
-    HeaderComponent,
     SmartHeaderComponent,
     ProductDescriptionComponent,
   ],

@@ -1,7 +1,7 @@
 import {IProduct} from '../product';
 import {AfterViewInit, Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {CategoriesService} from '../../menus/categories.sercice';
+import {CategoriesService} from '../../category/categories.sercice';
 import {ProductService} from "../productList/product.service";
 
 @Component({

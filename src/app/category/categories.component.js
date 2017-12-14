@@ -1,7 +1,7 @@
-"use strict";
 /**
  * Created by SerhiiTsymbaliuk on 7/16/17.
  */
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -13,31 +13,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var categories_sercice_1 = require("../categories.sercice");
 var router_1 = require("@angular/router");
-var authentication_service_1 = require("../../login/authentication.service");
-var SmartMenuComponent = (function () {
-    function SmartMenuComponent(router, categoriesService, authService) {
+var categories_sercice_1 = require("./categories.sercice");
+var CategoryListComponent = (function () {
+    function CategoryListComponent(router, categoriesService) {
         var _this = this;
         this.router = router;
         this.categoriesService = categoriesService;
-        this.authService = authService;
         this.categoriesService.getAll().subscribe(function (p) { return _this.categories = p; });
     }
-    SmartMenuComponent.prototype.logout = function () {
-        this.authService.logout();
-    };
-    return SmartMenuComponent;
+    return CategoryListComponent;
 }());
-SmartMenuComponent = __decorate([
+CategoryListComponent = __decorate([
     core_1.Component({
-        selector: 'smart-menu',
+        selector: 'app-categories',
         providers: [categories_sercice_1.CategoriesService],
-        templateUrl: './smart.menu.html',
-        styles: ['./smart-menu.css']
+        templateUrl: './category.menu.html',
+        styles: []
     }),
-    __metadata("design:paramtypes", [router_1.Router, categories_sercice_1.CategoriesService,
-        authentication_service_1.AuthenticationService])
-], SmartMenuComponent);
-exports.SmartMenuComponent = SmartMenuComponent;
-//# sourceMappingURL=smart.menu.component.js.map
+    __metadata("design:paramtypes", [router_1.Router, categories_sercice_1.CategoriesService])
+], CategoryListComponent);
+exports.CategoryListComponent = CategoryListComponent;
+//# sourceMappingURL=categories.component.js.map
