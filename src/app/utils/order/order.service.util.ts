@@ -32,23 +32,20 @@ export class OrderServiceUtil {
                 this.order.items[index].quantity++;
             }
         }
+        this.calculateTotal()
     }
 
     getOrder(): Order {
         return this.order;
     }
 
-    deleteItem(product: IProduct): void {
-        this.order.items.forEach(i => {
-            if (i.product_id == product.product_id) {
-                this.order.items.splice(this.order.items.indexOf(i));
-            }
-        });
+    deleteItem(item: OrderItem): void {
+        this.order.items.splice(this.order.items.indexOf(item));
+        this.calculateTotal()
     }
 
-    getTotal(): number {
+    calculateTotal() {
         this.total = 0;
         this.order.items.forEach(i => this.total += i.price * i.quantity);
-        return this.total;
     }
 }

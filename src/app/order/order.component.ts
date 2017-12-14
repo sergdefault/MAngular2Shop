@@ -2,17 +2,17 @@
  * Created by SerhiiTsymbaliuk on 12/8/17.
  */
 import {Component} from "@angular/core";
-import {IProduct} from "../../products/product";
-import {OrderServiceUtil} from "../../utils/order/order.service.util";
-import {Order} from "../order";
+import {OrderServiceUtil} from "../utils/order/order.service.util";
+import {Order} from "./order";
+import {OrderItem} from "./order.item";
 
 
 @Component({
   selector: 'app-accept-order',
-  templateUrl: './order.accept.component.html',
+  templateUrl: './order.component.html',
 })
 
-export class OrderAcceptComponent {
+export class OrderComponent {
   order = new Order();
 
   constructor(private service: OrderServiceUtil) {
@@ -22,8 +22,8 @@ export class OrderAcceptComponent {
     this.order = this.service.getOrder();
   }
 
-  deleteProduct(product: IProduct) {
-    this.service.deleteItem(product);
+  deleteProduct(item:OrderItem) {
+    this.service.deleteItem(item);
   }
 
   save(): void {

@@ -24,7 +24,7 @@ var user_cabinet_component_1 = require("./cabinet/user.cabinet.component");
 var can_activate_authguard_1 = require("./login/can-activate.authguard");
 var user_service_1 = require("./cabinet/user.service");
 var order_service_1 = require("./order/order.service");
-var order_accept_component_1 = require("./order/orderAccept/order.accept.component");
+var order_component_1 = require("./order/order.component");
 var new_user_component_1 = require("./login/newuser/new.user.component");
 var smart_menu_component_1 = require("./left_menu/smart.menu.component");
 var smart_header_1 = require("./headers/smart/smart.header");
@@ -36,7 +36,7 @@ var appRoutes = [
     { path: 'product/:id', component: product_detail_component_1.ProductDetailComponent },
     { path: 'login', component: login_component_1.LoginComponent },
     { path: 'cabinet', component: user_cabinet_component_1.UserCabinetComponent, canActivate: [can_activate_authguard_1.CanActivateAuthGuard] },
-    { path: 'order', component: order_accept_component_1.OrderAcceptComponent }
+    { path: 'order', component: order_component_1.OrderComponent }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -53,7 +53,7 @@ AppModule = __decorate([
             basket_btn_component_1.BasketBtn,
             login_component_1.LoginComponent,
             user_cabinet_component_1.UserCabinetComponent,
-            order_accept_component_1.OrderAcceptComponent,
+            order_component_1.OrderComponent,
             new_user_component_1.CreateNewUserComponent,
             smart_menu_component_1.SmartMenuComponent,
             smart_header_1.SmartHeaderComponent,

@@ -41,23 +41,19 @@ var OrderServiceUtil = (function () {
                 this.order.items[index_1].quantity++;
             }
         }
+        this.calculateTotal();
     };
     OrderServiceUtil.prototype.getOrder = function () {
         return this.order;
     };
-    OrderServiceUtil.prototype.deleteItem = function (product) {
-        var _this = this;
-        this.order.items.forEach(function (i) {
-            if (i.product_id == product.product_id) {
-                _this.order.items.splice(_this.order.items.indexOf(i));
-            }
-        });
+    OrderServiceUtil.prototype.deleteItem = function (item) {
+        this.order.items.splice(this.order.items.indexOf(item));
+        this.calculateTotal();
     };
-    OrderServiceUtil.prototype.getTotal = function () {
+    OrderServiceUtil.prototype.calculateTotal = function () {
         var _this = this;
         this.total = 0;
         this.order.items.forEach(function (i) { return _this.total += i.price * i.quantity; });
-        return this.total;
     };
     return OrderServiceUtil;
 }());

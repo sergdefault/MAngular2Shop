@@ -16,7 +16,7 @@ import {UserCabinetComponent} from "./cabinet/user.cabinet.component";
 import {CanActivateAuthGuard} from "./login/can-activate.authguard";
 import {UserService} from "./cabinet/user.service";
 import {OrderService} from "./order/order.service";
-import {OrderAcceptComponent} from "./order/orderAccept/order.accept.component";
+import {OrderComponent} from "./order/order.component";
 import {CreateNewUserComponent} from "./login/newuser/new.user.component";
 import {SmartMenuComponent} from "./left_menu/smart.menu.component";
 import {SmartHeaderComponent} from "./headers/smart/smart.header";
@@ -30,7 +30,7 @@ const appRoutes: Routes = [
   { path: 'product/:id',      component: ProductDetailComponent },
   { path: 'login',      component: LoginComponent },
   { path: 'cabinet',      component: UserCabinetComponent, canActivate: [CanActivateAuthGuard]},
-  { path: 'order',      component: OrderAcceptComponent}
+  { path: 'order',      component: OrderComponent}
 ];
 
 @NgModule({
@@ -42,7 +42,7 @@ const appRoutes: Routes = [
     BasketBtn,
     LoginComponent,
     UserCabinetComponent,
-    OrderAcceptComponent,
+    OrderComponent,
     CreateNewUserComponent,
     SmartMenuComponent,
     SmartHeaderComponent,

@@ -9,33 +9,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Created by SerhiiTsymbaliuk on 12/8/17.
+ */
 var core_1 = require("@angular/core");
-var order_service_util_1 = require("../../utils/order/order.service.util");
-var order_1 = require("../../order/order");
-var BasketComponent = (function () {
-    function BasketComponent(service) {
+var order_service_util_1 = require("../utils/order/order.service.util");
+var order_1 = require("./order");
+var OrderComponent = (function () {
+    function OrderComponent(service) {
         this.service = service;
         this.order = new order_1.Order();
     }
-    BasketComponent.prototype.ngOnInit = function () {
+    OrderComponent.prototype.ngOnInit = function () {
         this.order = this.service.getOrder();
     };
-    BasketComponent.prototype.deleteProduct = function (product) {
-        this.service.deleteItem(product);
+    OrderComponent.prototype.deleteProduct = function (item) {
+        this.service.deleteItem(item);
     };
-    BasketComponent.prototype.save = function () {
+    OrderComponent.prototype.save = function () {
         //this.pr.save(this.p);
         //todo
     };
-    return BasketComponent;
+    return OrderComponent;
 }());
-BasketComponent = __decorate([
+OrderComponent = __decorate([
     core_1.Component({
-        selector: 'app-basket',
-        templateUrl: './basket.component.html',
-        styles: []
+        selector: 'app-accept-order',
+        templateUrl: './order.component.html',
     }),
     __metadata("design:paramtypes", [order_service_util_1.OrderServiceUtil])
-], BasketComponent);
-exports.BasketComponent = BasketComponent;
-//# sourceMappingURL=basket.tcomponent.js.map
+], OrderComponent);
+exports.OrderComponent = OrderComponent;
+//# sourceMappingURL=order.component.js.map
