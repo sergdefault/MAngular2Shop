@@ -15,20 +15,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var order_service_util_1 = require("../utils/order/order.service.util");
 var order_1 = require("./order");
+var order_service_1 = require("./order.service");
 var OrderComponent = (function () {
-    function OrderComponent(service) {
-        this.service = service;
+    function OrderComponent(util, orderService) {
+        this.util = util;
+        this.orderService = orderService;
         this.order = new order_1.Order();
     }
     OrderComponent.prototype.ngOnInit = function () {
-        this.order = this.service.getOrder();
+        this.order = this.util.getOrder();
     };
     OrderComponent.prototype.deleteProduct = function (item) {
-        this.service.deleteItem(item);
+        this.util.deleteItem(item);
     };
-    OrderComponent.prototype.save = function () {
-        //this.pr.save(this.p);
-        //todo
+    OrderComponent.prototype.saveOrder = function (order) {
+        this.orderService.save(order);
     };
     return OrderComponent;
 }());
@@ -37,7 +38,7 @@ OrderComponent = __decorate([
         selector: 'app-accept-order',
         templateUrl: './order.component.html',
     }),
-    __metadata("design:paramtypes", [order_service_util_1.OrderServiceUtil])
+    __metadata("design:paramtypes", [order_service_util_1.OrderServiceUtil, order_service_1.OrderService])
 ], OrderComponent);
 exports.OrderComponent = OrderComponent;
 //# sourceMappingURL=order.component.js.map

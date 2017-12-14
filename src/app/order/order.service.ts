@@ -23,9 +23,15 @@ export class OrderService {
       .map(mapOrderArray);
   }
 
+  save(order: Order){
+    this.http.post(`${this.baseUrl}/save`, JSON.stringify(order), {headers: this.getHeaders()}).subscribe();
+  }
+
   private getHeaders() {
     let headers = new Headers();
-    headers.append('Authorization','Bearer '+ this.authenticationService.getToken().toString());
+    //headers.append('Authorization','Bearer '+ this.authenticationService.getToken().toString());
+    headers.append('Content-Type', 'application/json');
+
     return headers;
   }
 
