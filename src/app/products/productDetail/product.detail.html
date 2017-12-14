@@ -1,3 +1,4 @@
+<button class="nav-btn" onclick="goBack()"> <h1>Назад</h1></button>
 <div *ngIf="product" class="thumbnail">
     <a [routerLink]="['/product', product.product_id]"><img src="300.png"></a>
     <div style="padding-left: 40px;">
@@ -11,5 +12,10 @@
             </tr>
         </table>
     </div>
-    <a [routerLink]="['/product/offer', product.product_id]">Характеристики</a>
 </div>
+
+<h1><button  class="nav-btn" [routerLink]="['/product/offer', product.product_id]">Характеристики</button></h1>
+
+
+
+

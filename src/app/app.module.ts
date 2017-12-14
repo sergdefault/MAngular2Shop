@@ -28,6 +28,7 @@ import {ProductDescriptionComponent} from "./products/description/product.descri
 
 const appRoutes: Routes = [
   { path: 'category/:id', component: ProductListComponent },
+  { path: 'categories', component: CategoryListComponent },
   { path: 'product/offer/:id', component: ProductDescriptionComponent },
   { path: 'product/:id',      component: ProductDetailComponent },
   { path: 'login',      component: LoginComponent },
@@ -51,7 +52,7 @@ const appRoutes: Routes = [
     SmartMenuComponent,
     HeaderComponent,
     SmartHeaderComponent,
-    ProductDescriptionComponent
+    ProductDescriptionComponent,
   ],
   imports: [
     RouterModule.forRoot(

@@ -6,16 +6,18 @@
 <br><br><br><br><br>
 <h1><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a></h1>
 <div class="links">
-  <a *ngIf="!authService.isLoggedIn()" routerLink="/login">Login</a>
-  <a *ngIf="authService.isLoggedIn()" (click)="logout()">Logout</a>
-  <a *ngIf="authService.isLoggedIn()" routerLink="/cabinet">Cabinet</a>
+  <a *ngIf="!authService.isLoggedIn()" onclick="closeNav()" routerLink="/login">Login</a>
+  <a *ngIf="authService.isLoggedIn()" onclick="closeNav()" (click)="logout()">Logout</a>
+  <a *ngIf="authService.isLoggedIn()" onclick="closeNav()" routerLink="/cabinet">Cabinet</a>
 </div>
 <hr>
-<div class="links" *ngFor="let category of categories">
-  <div>
-    <a onclick="closeNav()" [routerLink]="['/category', category.id]" >{{category.name}}</a>
-  </div>
-</div>
+<!--<div class="links" *ngFor="let category of categories">-->
+  <!--<div>-->
+    <!--<a onclick="closeNav()" [routerLink]="['/category', category.id]" >{{category.name}}</a>-->
+  <!--</div>-->
+<!--</div>-->
+<a class="links" onclick="closeNav()" [routerLink]="['/categories']" >Категории</a>
+
 <hr>
 <br><br>
 
