@@ -29,7 +29,7 @@ export class OrderService {
 
   private getHeaders() {
     let headers = new Headers();
-    //headers.append('Authorization','Bearer '+ this.authenticationService.getToken().toString());
+    headers.append('Authorization','Bearer '+ this.authenticationService.getToken().toString());
     headers.append('Content-Type', 'application/json');
 
     return headers;

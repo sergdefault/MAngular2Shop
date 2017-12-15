@@ -1,7 +1,7 @@
-"use strict";
 /**
  * Created by SerhiiTsymbaliuk on 12/8/17.
  */
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -32,7 +32,7 @@ var OrderService = (function () {
     };
     OrderService.prototype.getHeaders = function () {
         var headers = new http_1.Headers();
-        //headers.append('Authorization','Bearer '+ this.authenticationService.getToken().toString());
+        headers.append('Authorization', 'Bearer ' + this.authenticationService.getToken().toString());
         headers.append('Content-Type', 'application/json');
         return headers;
     };

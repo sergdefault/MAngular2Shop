@@ -16,14 +16,22 @@ var core_1 = require("@angular/core");
 var order_service_util_1 = require("../utils/order/order.service.util");
 var order_1 = require("./order");
 var order_service_1 = require("./order.service");
+var authentication_service_1 = require("../login/authentication.service");
+var user_service_1 = require("../cabinet/user.service");
 var OrderComponent = (function () {
-    function OrderComponent(util, orderService) {
+    function OrderComponent(util, orderService, authService, userService) {
         this.util = util;
         this.orderService = orderService;
+        this.authService = authService;
+        this.userService = userService;
         this.order = new order_1.Order();
     }
     OrderComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.order = this.util.getOrder();
+        if (this.authService.isLoggedIn()) {
+            this.userService.getUser().subscribe(function (u) { return _this.order.userId = u.id; });
+        }
     };
     OrderComponent.prototype.deleteProduct = function (item) {
         this.util.deleteItem(item);
@@ -38,7 +46,10 @@ OrderComponent = __decorate([
         selector: 'app-accept-order',
         templateUrl: './order.component.html',
     }),
-    __metadata("design:paramtypes", [order_service_util_1.OrderServiceUtil, order_service_1.OrderService])
+    __metadata("design:paramtypes", [order_service_util_1.OrderServiceUtil,
+        order_service_1.OrderService,
+        authentication_service_1.AuthenticationService,
+        user_service_1.UserService])
 ], OrderComponent);
 exports.OrderComponent = OrderComponent;
 //# sourceMappingURL=order.component.js.map

@@ -6,8 +6,8 @@ import {OrderItem} from "./order.item";
 export class Order {
   userId: number;
   items: OrderItem[]=[];
-
+  date: Date;
+  totalPrice:number;
   constructor(){
-
   }
 }

@@ -3,17 +3,13 @@ import {IProduct} from '../../products/product';
 import {Order} from "../../order/order";
 import {AuthenticationService} from "../../login/authentication.service";
 import {OrderItem} from "../../order/order.item";
+import {UserService} from "../../cabinet/user.service";
+import {User} from "../../cabinet/User";
 
 @Injectable()
 export class OrderServiceUtil {
     order = new Order();
-    total: number = 0;
-
-    constructor(private authService: AuthenticationService) {
-        if (authService.isLoggedIn()) {
-            //todo;
-        }
-    }
+    user:User;
 
     addProduct(product: IProduct): void {
         if (this.order.items.length == 0) {
@@ -45,7 +41,7 @@ export class OrderServiceUtil {
     }
 
     calculateTotal() {
-        this.total = 0;
-        this.order.items.forEach(i => this.total += i.price * i.quantity);
+        this.order.totalPrice = 0;
+        this.order.items.forEach(i => this.order.totalPrice += i.price * i.quantity);
     }
 }

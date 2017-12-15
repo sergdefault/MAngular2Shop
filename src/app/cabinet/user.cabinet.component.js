@@ -14,13 +14,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var core_1 = require("@angular/core");
 var user_service_1 = require("./user.service");
+var order_service_1 = require("../order/order.service");
 var UserCabinetComponent = (function () {
-    function UserCabinetComponent(userService) {
+    function UserCabinetComponent(userService, orderService) {
         this.userService = userService;
+        this.orderService = orderService;
     }
     UserCabinetComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.userService.getUser().subscribe(function (u) { return _this.user = u; });
+        this.orderService.getOrders().subscribe(function (o) { return _this.orders = o; });
     };
     return UserCabinetComponent;
 }());
@@ -28,7 +31,8 @@ UserCabinetComponent = __decorate([
     core_1.Component({
         templateUrl: './user.cabinet.component.html',
     }),
-    __metadata("design:paramtypes", [user_service_1.UserService])
+    __metadata("design:paramtypes", [user_service_1.UserService,
+        order_service_1.OrderService])
 ], UserCabinetComponent);
 exports.UserCabinetComponent = UserCabinetComponent;
 //# sourceMappingURL=user.cabinet.component.js.map
